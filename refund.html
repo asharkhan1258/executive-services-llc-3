@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OFF TECH LLC </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    
+
+
+<!-- Cart Offcanvas -->
+<div class="offcanvas offcanvas-end ldd-cart-offcanvas" tabindex="-1" id="lddCartOffcanvas">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title fw-bold">
+      <i class="fa-solid fa-cart-shopping me-2"></i>
+      Your Cart
+    </h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+
+  <div class="offcanvas-body">
+    <div id="lddCartItems"></div>
+
+    <div class="ldd-cart-empty text-center py-5" id="lddCartEmpty">
+      <i class="fa-regular fa-heart fs-1 mb-3"></i>
+      <p class="mb-0">Your cart is empty.</p>
+    </div>
+
+    <div class="ldd-cart-total-box mt-4">
+      <div class="d-flex justify-content-between align-items-center">
+        <strong>Total:</strong>
+        <strong id="lddCartTotal">$0.00</strong>
+      </div>
+
+      <a href="tel:+18149274890" class="btn ldd-purchase-all-btn w-100 mt-3">
+        <i class="fa-solid fa-phone me-2"></i>
+        Purchase Now
+      </a>
+
+      <button class="btn ldd-clear-cart-btn w-100 mt-2" type="button" id="lddClearCart">
+        Clear Cart
+      </button>
+    </div>
+  </div>
+</div>
+
+<header class="ldd-header  bg-white">
+
+  <!-- Header Middle -->
+  <div class="ldd-header-middle py-4 border-bottom">
+    <div class="container ">
+
+      <div class="row align-items-center">
+
+        <!-- Logo -->
+        <div class="col-8 col-lg-5">
+          <a href="/" class="ldd-logo d-inline-block text-decoration-none">
+            <h2 class="text-dark">OFF TECH BILLS </h2>
+          </a>
+        </div>
+
+        <!-- Mobile Toggle -->
+        <div class="col-4 d-lg-none text-end">
+          <button class="navbar-toggler ldd-toggle-btn" type="button" data-bs-toggle="collapse" data-bs-target="#lddMainMenu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+
+        <!-- Contact + Search -->
+         <div class="col-12 col-lg-7 d-lg-flex d-none">
+          <div class="d-flex flex-column flex-lg-row align-items-stretch align-items-lg-center gap-3">
+
+            <!-- Hotline -->
+            <a href="tel:+18149274890" class="ldd-hotline text-decoration-none">
+              <div class="d-flex align-items-center gap-2">
+                <span class="ldd-hotline-icon">
+                  <i class="fa-solid fa-headset"></i>
+                </span>
+                <div>
+                  <span class="d-block ldd-hotline-small">Contact us 24/7</span>
+                  <strong class="d-block ldd-hotline-number">+1 (814) 927-4890</strong>
+                </div>
+              </div>
+            </a>
+
+            <!-- Search -->
+            <form action="#" method="get" class="ldd-search flex-grow-1">
+              <div class="input-group">
+                <input type="text" name="s" class="form-control ldd-search-input" placeholder="Search for products">
+                <input type="hidden" name="post_type" value="product">
+                <button class="btn ldd-search-btn" type="submit">
+                  <i class="fa-solid fa-magnifying-glass me-1"></i>
+                  Search
+                </button>
+              </div>
+            </form>
+
+            <!-- Right Icon -->
+         
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Header Bottom Menu -->
+  <nav class="ldd-header-bottom navbar navbar-expand-lg">
+    <div class="container">
+
+      <div class="collapse navbar-collapse" id="lddMainMenu">
+        <ul class="navbar-nav ldd-navbar me-auto gap-lg-3">
+
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="services.html">Services</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="privacy.html">Privacy Policy</a>
+          </li>
+
+           <li class="nav-item">
+            <a class="nav-link active" href="refund.html">Refund Policy</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="terms.html">Terms &amp; Condition</a>
+          </li>
+
+       
+        </ul>
+      </div>
+
+      <button class="btn ldd-cart-main-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#lddCartOffcanvas">
+        <i class="fa-solid fa-cart-shopping me-2"></i>
+        Cart
+        <span class="badge text-bg-light ms-2" id="lddCartCount">0</span>
+      </button>
+
+    </div>
+  </nav>
+
+</header>
+
+<section class="ldd-breadcrumb-section py-3">
+  <div class="container">
+
+    <nav aria-label="breadcrumb ">
+      <ol class="breadcrumb ldd-breadcrumb">
+
+        <li class="breadcrumb-item">
+          <a href="/" class="text-dark text-decoration-none">Home</a>
+        </li>
+
+        <li class="breadcrumb-item active" aria-current="page">
+            Refund Policy
+        </li>
+
+      </ol>
+    </nav>
+
+  </div>
+</section>
+
+
+<section class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-12">
+
+      <div class="card border-0  p-lg-5 p-4">
+
+        <!-- Header -->
+        <div class="mb-4">
+          <h2 class="fw-bold mb-2" >
+            Refund Policy
+          </h2>
+
+          <p class="text-muted mb-0">
+            Last updated:
+            <strong>May 10, 2025</strong>
+          </p>
+        </div>
+
+        <!-- Content -->
+        <div class="policy-content">
+
+          <h4 class="fw-bold mt-4 mb-3">
+            Your Rights Regarding Refunds
+          </h4>
+
+          <p class="text-secondary lh-lg">
+            In the event of a refund or cancellation, both the Consultant and
+            the Client agree to the following:
+          </p>
+
+          <h4 class="fw-bold mt-5 mb-3">
+            Refund and Cancellation
+          </h4>
+
+          <!-- Item -->
+          <div class="border rounded-3 p-3 mb-3 bg-light">
+            <p class="mb-0 text-secondary lh-lg">
+              <strong>Before the work begins:</strong>
+              A full refund of any prepaid amount shall be issued to the Client.
+            </p>
+          </div>
+
+          <!-- Item -->
+          <div class="border rounded-3 p-3 mb-3 bg-light">
+            <p class="mb-0 text-secondary lh-lg">
+              <strong>After the work begins but before service is fulfilled:</strong>
+              A partial refund of the prepaid amount shall be issued to the Client
+              based upon the portion of work completed.
+            </p>
+          </div>
+
+          <!-- Item -->
+          <div class="border rounded-3 p-3 mb-3 bg-light">
+            <p class="mb-0 text-secondary lh-lg">
+              <strong>After the service is fulfilled:</strong>
+              No refund shall be issued to the Client.
+            </p>
+          </div>
+
+          <h4 class="fw-bold mt-5 mb-3">
+            Consultant-Initiated Cancellation
+          </h4>
+
+          <p class="text-secondary lh-lg">
+            If the Consultant cancels the service for any reason prior to
+            fulfillment, a full refund shall be issued to the Client. The amount
+            of the refund shall be credited to the original payment method within
+            30 days of service cancellation.
+          </p>
+
+          <p class="text-secondary lh-lg">
+            After the fulfillment of service has taken effect, the Client may not
+            be eligible for a refund and may still be entitled to pay the
+            Consultant.
+          </p>
+
+          <!-- Contact Box -->
+          <div class="mt-4 p-4 rounded-3 border bg-light">
+            <p class="mb-2 fw-semibold">
+              To initiate a refund request, please contact:
+            </p>
+
+            <a href="mailto:offtechbillsllc@gmail.com"
+              class="text-decoration-none fw-bold"
+              >
+              offtechbillsllc@gmail.com
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+<footer class="ldd-footer">
+
+  <div class="ldd-footer-main py-5">
+    <div class="container">
+
+      <div class="row g-4 justify-content-between">
+
+        <!-- Footer Logo / Contact -->
+        <div class="col-12 col-lg-5">
+          <div class="ldd-footer-brand">
+
+           <a  class="ldd-footer-logo d-inline-block mb-4 text-decoration-none text-white">
+              <h2>OFF TECH LLC </h2>
+            </a>
+
+            <ul class="ldd-footer-contact list-unstyled mb-4">
+
+              <li class="d-flex align-items-start gap-3 mb-3">
+                <span class="ldd-footer-icon">
+                  <i class="fa-solid fa-location-dot"></i>
+                </span>
+                <span>5900 Balcones Drive, Suite 100 Austin TX 78731</span>
+              </li>
+
+              <li class="d-flex align-items-start gap-3 mb-3">
+                <span class="ldd-footer-icon">
+                  <i class="fa-solid fa-envelope"></i>
+                </span>
+                <a href="mailto:offtechbillsllc@gmail.com">
+                  offtechbillsllc@gmail.com
+                </a>
+              </li>
+
+              <li class="d-flex align-items-start gap-3">
+                <span class="ldd-footer-icon">
+                  <i class="fa-solid fa-phone"></i>
+                </span>
+                <a href="tel:+18149274890">
+                  +1 (814) 927-4890
+                </a>
+              </li>
+              
+              <li class="d-flex align-items-start gap-3">
+                <a href="tel:+18149274890">
+                  <img src="card_logo-removebg-preview.png" class="w-50 img-fluid" alt="">
+                </a>
+              </li>
+
+            </ul>
+
+            
+
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-12 col-md-6 col-lg-6">
+          <div class="ldd-footer-widget">
+
+            <h6 class="ldd-footer-title">Quick Links</h6>
+
+            <ul class="ldd-footer-links list-unstyled mb-0">
+              <li>
+                <a href="/">Home</a>
+              </li>
+
+              <li>
+                <a href="about.html">About</a>
+              </li>
+
+              <li>
+                <a href="services.html">Services</a>
+              </li>
+
+              <li>
+                <a href="contact.html">Contact</a>
+              </li>
+
+               <li>
+                <a href="privacy.html">Privacy Policy</a>
+              </li>
+
+              <li>
+                <a href="refund.html">Refund Policy</a>
+              </li>
+
+              <li>
+                <a href="terms.html">Terms &amp; Condition</a>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div class="ldd-footer-bottom py-3">
+    <div class="container">
+      <p class="mb-0 text-center">
+        Copyright © <strong>OFF TECH LLC </strong>. All Rights Reserved.
+      </p>
+    </div>
+  </div>
+
+</footer>
+
+</body>
+</html>

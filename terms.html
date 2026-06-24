@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OFF TECH LLC </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    
+
+
+<!-- Cart Offcanvas -->
+<div class="offcanvas offcanvas-end ldd-cart-offcanvas" tabindex="-1" id="lddCartOffcanvas">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title fw-bold">
+      <i class="fa-solid fa-cart-shopping me-2"></i>
+      Your Cart
+    </h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+
+  <div class="offcanvas-body">
+    <div id="lddCartItems"></div>
+
+    <div class="ldd-cart-empty text-center py-5" id="lddCartEmpty">
+      <i class="fa-regular fa-heart fs-1 mb-3"></i>
+      <p class="mb-0">Your cart is empty.</p>
+    </div>
+
+    <div class="ldd-cart-total-box mt-4">
+      <div class="d-flex justify-content-between align-items-center">
+        <strong>Total:</strong>
+        <strong id="lddCartTotal">$0.00</strong>
+      </div>
+
+      <a href="tel:+18149274890" class="btn ldd-purchase-all-btn w-100 mt-3">
+        <i class="fa-solid fa-phone me-2"></i>
+        Purchase Now
+      </a>
+
+      <button class="btn ldd-clear-cart-btn w-100 mt-2" type="button" id="lddClearCart">
+        Clear Cart
+      </button>
+    </div>
+  </div>
+</div>
+
+<header class="ldd-header  bg-white">
+
+  <!-- Header Middle -->
+  <div class="ldd-header-middle py-4 border-bottom">
+    <div class="container ">
+
+      <div class="row align-items-center">
+
+        <!-- Logo -->
+        <div class="col-8 col-lg-5">
+          <a href="/" class="ldd-logo d-inline-block text-decoration-none">
+            <h2 class="text-dark">OFF TECH BILLS </h2>
+          </a>
+        </div>
+
+        <!-- Mobile Toggle -->
+        <div class="col-4 d-lg-none text-end">
+          <button class="navbar-toggler ldd-toggle-btn" type="button" data-bs-toggle="collapse" data-bs-target="#lddMainMenu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+
+        <!-- Contact + Search -->
+         <div class="col-12 col-lg-7 d-lg-flex d-none">
+          <div class="d-flex flex-column flex-lg-row align-items-stretch align-items-lg-center gap-3">
+
+            <!-- Hotline -->
+            <a href="tel:+18149274890" class="ldd-hotline text-decoration-none">
+              <div class="d-flex align-items-center gap-2">
+                <span class="ldd-hotline-icon">
+                  <i class="fa-solid fa-headset"></i>
+                </span>
+                <div>
+                  <span class="d-block ldd-hotline-small">Contact us 24/7</span>
+                  <strong class="d-block ldd-hotline-number">+1 (814) 927-4890</strong>
+                </div>
+              </div>
+            </a>
+
+            <!-- Search -->
+            <form action="#" method="get" class="ldd-search flex-grow-1">
+              <div class="input-group">
+                <input type="text" name="s" class="form-control ldd-search-input" placeholder="Search for products">
+                <input type="hidden" name="post_type" value="product">
+                <button class="btn ldd-search-btn" type="submit">
+                  <i class="fa-solid fa-magnifying-glass me-1"></i>
+                  Search
+                </button>
+              </div>
+            </form>
+
+            <!-- Right Icon -->
+         
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Header Bottom Menu -->
+  <nav class="ldd-header-bottom navbar navbar-expand-lg">
+    <div class="container">
+
+      <div class="collapse navbar-collapse" id="lddMainMenu">
+        <ul class="navbar-nav ldd-navbar me-auto gap-lg-3">
+
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="services.html">Services</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="privacy.html">Privacy Policy</a>
+          </li>
+
+<li class="nav-item">
+            <a class="nav-link" href="refund.html">Refund Policy</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" href="terms.html">Terms &amp; Condition</a>
+          </li>
+
+       
+        </ul>
+      </div>
+
+      <button class="btn ldd-cart-main-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#lddCartOffcanvas">
+        <i class="fa-solid fa-cart-shopping me-2"></i>
+        Cart
+        <span class="badge text-bg-light ms-2" id="lddCartCount">0</span>
+      </button>
+
+    </div>
+  </nav>
+
+</header>
+
+<section class="ldd-breadcrumb-section py-3">
+  <div class="container">
+
+    <nav aria-label="breadcrumb ">
+      <ol class="breadcrumb ldd-breadcrumb">
+
+        <li class="breadcrumb-item">
+          <a href="/" class="text-dark text-decoration-none">Home</a>
+        </li>
+
+        <li class="breadcrumb-item active" aria-current="page">
+            Terms and Conditions
+        </li>
+
+      </ol>
+    </nav>
+
+  </div>
+</section>
+
+
+<section class="ldd-policy-section py-5">
+  <div class="container">
+
+    <div class="row justify-content-center">
+      <div class="col-12 ">
+
+        <div class="ldd-policy-box">
+
+          <div class="ldd-policy-header text-center mb-4">
+            <h1 class="ldd-policy-main-title">Terms and Conditions</h1>
+            <p class="ldd-policy-date">Last Updated: February 12, 2026</p>
+          </div>
+
+          <p>
+            Welcome to <strong>OFF TECH LLC </strong>. These Terms and Conditions
+            outline the rules and regulations for the use of our website and all services
+            provided by OFF TECH LLC . By accessing this website or purchasing any
+            service, you accept these Terms and Conditions in full. If you do not agree,
+            you must not use this website.
+          </p>
+
+          <hr>
+
+          <h2>1. Company Information</h2>
+          <p>This website is operated by:</p>
+
+          <p>
+            <strong>OFF TECH LLC </strong><br>
+           5900 Balcones Drive, Suite 100 Austin TX 78731<br>
+            Phone: +1 (814) 927-4890<br>
+            Email:
+            <a href="mailto:offtechbillsllc@gmail.com">
+              offtechbillsllc@gmail.com
+            </a>
+          </p>
+
+          <p>
+            Throughout the site, the terms “Company,” “we,” “us,” and “our” refer to
+            OFF TECH LLC .
+          </p>
+
+          <hr>
+
+          <h2>2. Scope of Services</h2>
+          <p>
+            OFF TECH LLC  provides professional digital and technology-based
+            services delivered remotely. Our services include but are not limited to the following:
+          </p>
+
+          <h3 class="text-black fw-bold mt-4 mb-3">2.1 Graphic Designing</h3>
+          <p>
+            We provide professional graphic design services including logos, brand identity
+            kits, social media creatives, marketing banners, brochures, business cards,
+            packaging designs, and promotional materials.
+          </p>
+          <p>
+            All services are delivered online. Clients must provide clear requirements,
+            brand guidelines, and necessary content. We provide design concepts, revision
+            rounds as agreed, and final high-resolution files suitable for digital and print use.
+            Final files are delivered upon full payment.
+          </p>
+
+          <h3 class="text-black fw-bold mt-4 mb-3">2.2 Application Integration</h3>
+          <p>
+            We provide application and system integration services including integration of
+            payment gateways, CRMs, ERP systems, e-commerce platforms, APIs, third-party
+            tools, and automation systems.
+          </p>
+          <p>
+            Integration is performed remotely after technical evaluation. Clients are responsible
+            for providing secure access credentials and system documentation. We are not liable
+            for third-party system limitations or restrictions.
+          </p>
+
+          <h3 class="text-black fw-bold mt-4 mb-3">2.3 App Development</h3>
+          <p>
+            We develop custom mobile applications for Android and iOS including business apps,
+            e-commerce apps, booking systems, service apps, and enterprise applications.
+          </p>
+          <p>
+            Services include planning, UI/UX design, development, testing, and deployment.
+            Project timelines depend on scope and client cooperation. App store approvals are
+            subject to the policies of Google Play and Apple App Store.
+          </p>
+
+          <h3 class="text-black fw-bold mt-4 mb-3">2.4 Web Design &amp; Development</h3>
+          <p>
+            We design and develop responsive websites including business websites, e-commerce
+            stores, landing pages, portfolio websites, and custom web applications.
+          </p>
+          <p>
+            Services may include UI/UX design, front-end and back-end development, payment
+            gateway integration, security implementation, speed optimization, and mobile
+            responsiveness.
+          </p>
+
+
+          <h3 class="text-black fw-bold mt-4 mb-3">2.5 Offshore Development</h3>
+          <p>
+            We offer offshore development services allowing clients to hire remote developers,
+            designers, and technical experts.
+          </p>
+          <p>
+            All resources work remotely. Clients are responsible for project management
+            collaboration and timely communication.
+          </p>
+
+          <h3 class="text-black fw-bold mt-4 mb-3">2.6 Back Office Support</h3>
+          <p>
+            We provide remote administrative and operational support including data entry,
+            order processing, email handling, chat support, documentation management, and reporting.
+          </p>
+          <p>
+            All services are delivered online. Clients must provide proper access and instructions.
+          </p>
+
+          <h3 class="text-black fw-bold mt-4 mb-3">2.7 CRM Software Development</h3>
+          <p>
+            We develop custom CRM software for managing customer data, sales pipelines,
+            automation, reporting, and collaboration.
+          </p>
+          <p>
+            Development includes requirement analysis, architecture planning, development,
+            testing, and deployment. Clients are responsible for accurate requirement submission
+            and timely approvals.
+          </p>
+
+          <hr>
+
+          <h2>3. Service Delivery &amp; Client Responsibilities</h2>
+          <ul>
+            <li>All services are delivered remotely unless otherwise agreed in writing.</li>
+            <li>Clients must provide accurate project requirements and timely feedback.</li>
+            <li>Delays caused by incomplete information or late responses are not our responsibility.</li>
+            <li>Additional work beyond agreed scope will require additional payment.</li>
+          </ul>
+
+          <hr>
+
+          <h2>4. Payments &amp; Fees</h2>
+          <ul>
+            <li>Full or milestone payments must be made as agreed before project delivery.</li>
+            <li>All payments are non-refundable unless explicitly agreed in writing.</li>
+            <li>Late payments may result in project suspension.</li>
+            <li>We reserve the right to revise pricing at any time for new contracts.</li>
+          </ul>
+
+          <hr>
+
+          <h2>5. Revisions &amp; Modifications</h2>
+          <ul>
+            <li>Revision limits are defined per project agreement.</li>
+            <li>Additional revisions beyond the agreed number may incur extra charges.</li>
+            <li>Major scope changes require a new agreement.</li>
+          </ul>
+
+          <hr>
+
+          <h2>6. Intellectual Property</h2>
+          <ul>
+            <li>Ownership of final deliverables transfers to the client only after full payment.</li>
+            <li>We reserve the right to showcase completed work in our portfolio unless otherwise agreed.</li>
+            <li>Unauthorized reproduction or resale of our proprietary frameworks or systems is prohibited.</li>
+          </ul>
+
+          <hr>
+
+          <h2>7. Limitation of Liability</h2>
+          <p>
+            To the maximum extent permitted by law, OFF TECH LLC  shall not be liable for:
+          </p>
+
+          <ul>
+            <li>Indirect, incidental, or consequential damages</li>
+            <li>Loss of profits, revenue, or business opportunities</li>
+            <li>Third-party service failures</li>
+            <li>Market performance outcomes</li>
+            <li>Data loss caused by hosting providers or external systems</li>
+          </ul>
+
+          <p>
+            Total liability, if any, shall not exceed the amount paid for the specific service
+            in dispute.
+          </p>
+
+          <hr>
+
+          <h2>8. Termination</h2>
+          <p>
+            We reserve the right to terminate services or refuse service at our discretion if:
+          </p>
+
+          <ul>
+            <li>Payments are not made</li>
+            <li>Misuse or abusive behavior occurs</li>
+            <li>Fraudulent activity is suspected</li>
+          </ul>
+
+          <hr>
+
+          <h2>9. Confidentiality</h2>
+          <p>
+            Both parties agree to maintain confidentiality of proprietary information shared
+            during projects unless disclosure is required by law.
+          </p>
+
+          <hr>
+
+          <h2>10. Governing Law</h2>
+          <p>
+            These Terms shall be governed by the laws of the State of Pennsylvania, United States.
+            Any disputes shall be resolved exclusively in the courts of Pennsylvania.
+          </p>
+
+          <hr>
+
+          <h2>11. Changes to Terms</h2>
+          <p>
+            We reserve the right to update or modify these Terms at any time. Continued use of
+            our website or services constitutes acceptance of updated Terms.
+          </p>
+
+          <hr>
+
+          <h2>12. Contact Information</h2>
+          <p>
+            <strong>OFF TECH LLC </strong><br>
+            5900 Balcones Drive, Suite 100 Austin TX 78731<br>
+            Phone: +1 (814) 927-4890<br>
+            Email:
+            <a href="mailto:offtechbillsllc@gmail.com">
+              offtechbillsllc@gmail.com
+            </a>
+          </p>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+<footer class="ldd-footer">
+
+  <div class="ldd-footer-main py-5">
+    <div class="container">
+
+      <div class="row g-4 justify-content-between">
+
+        <!-- Footer Logo / Contact -->
+        <div class="col-12 col-lg-5">
+          <div class="ldd-footer-brand">
+
+            <a  class="ldd-footer-logo d-inline-block mb-4 text-decoration-none text-white">
+              <h2>OFF TECH LLC </h2>
+            </a>
+
+            <ul class="ldd-footer-contact list-unstyled mb-4">
+
+              <li class="d-flex align-items-start gap-3 mb-3">
+                <span class="ldd-footer-icon">
+                  <i class="fa-solid fa-location-dot"></i>
+                </span>
+                <span>5900 Balcones Drive, Suite 100 Austin TX 78731</span>
+              </li>
+
+              <li class="d-flex align-items-start gap-3 mb-3">
+                <span class="ldd-footer-icon">
+                  <i class="fa-solid fa-envelope"></i>
+                </span>
+                <a href="mailto:offtechbillsllc@gmail.com">
+                  offtechbillsllc@gmail.com
+                </a>
+              </li>
+
+              <li class="d-flex align-items-start gap-3">
+                <span class="ldd-footer-icon">
+                  <i class="fa-solid fa-phone"></i>
+                </span>
+                <a href="tel:+18149274890">
+                  +1 (814) 927-4890
+                </a>
+              </li>
+              
+              <li class="d-flex align-items-start gap-3">
+                <a href="tel:+18149274890">
+                  <img src="card_logo-removebg-preview.png" class="w-50 img-fluid" alt="">
+                </a>
+              </li>
+
+            </ul>
+
+            
+
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-12 col-md-6 col-lg-6">
+          <div class="ldd-footer-widget">
+
+            <h6 class="ldd-footer-title">Quick Links</h6>
+
+            <ul class="ldd-footer-links list-unstyled mb-0">
+              <li>
+                <a href="/">Home</a>
+              </li>
+
+              <li>
+                <a href="about.html">About</a>
+              </li>
+
+              <li>
+                <a href="services.html">Services</a>
+              </li>
+
+              <li>
+                <a href="contact.html">Contact</a>
+              </li>
+
+               <li>
+                <a href="privacy.html">Privacy Policy</a>
+              </li>
+
+              <li>
+                <a href="refund.html">Refund Policy</a>
+              </li>
+
+              <li>
+                <a href="terms.html">Terms &amp; Condition</a>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div class="ldd-footer-bottom py-3">
+    <div class="container">
+      <p class="mb-0 text-center">
+        Copyright © <strong>OFF TECH LLC </strong>. All Rights Reserved.
+      </p>
+    </div>
+  </div>
+
+</footer>
+
+</body>
+</html>
